@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ci7e4o8gpkgi"
+path="res://.godot/imported/ground_pathBendBank.obj-01a6825d448293c608b9036e7b5253e1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_pathBendBank.obj-01a6825d448293c608b9036e7b5253e1.mesh"]
+
+source_file="res://Assets/Sprites/natural/Models/OBJ format/ground_pathBendBank.obj"
+dest_files=["res://.godot/imported/ground_pathBendBank.obj-01a6825d448293c608b9036e7b5253e1.mesh", "res://.godot/imported/ground_pathBendBank.obj-01a6825d448293c608b9036e7b5253e1.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6s8861tvy6hp"
+path="res://.godot/imported/stone_smallTopA.obj-8a9083f5a1473c602f10aef52137082e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stone_smallTopA.obj-8a9083f5a1473c602f10aef52137082e.mesh"]
+
+source_file="res://Assets/Sprites/natural/Models/OBJ format/stone_smallTopA.obj"
+dest_files=["res://.godot/imported/stone_smallTopA.obj-8a9083f5a1473c602f10aef52137082e.mesh", "res://.godot/imported/stone_smallTopA.obj-8a9083f5a1473c602f10aef52137082e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

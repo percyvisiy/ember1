@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chkagctq31b6l"
+path="res://.godot/imported/ground_riverSide.obj-633b15c94b41df36719b1a5d7bb2e2ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_riverSide.obj-633b15c94b41df36719b1a5d7bb2e2ca.mesh"]
+
+source_file="res://Assets/Sprites/natural/Models/OBJ format/ground_riverSide.obj"
+dest_files=["res://.godot/imported/ground_riverSide.obj-633b15c94b41df36719b1a5d7bb2e2ca.mesh", "res://.godot/imported/ground_riverSide.obj-633b15c94b41df36719b1a5d7bb2e2ca.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
