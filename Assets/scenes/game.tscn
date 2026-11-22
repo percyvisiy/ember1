@@ -4,12 +4,19 @@
 [ext_resource type="Script" uid="uid://4ej5lhntgf1g" path="res://Assets/Scripts/player.gd" id="1_xhv1s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kxuq"]
-radius = 0.35
+radius = 0.40722656
 height = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4kxuq"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4kxuq"]
+size = Vector3(30, 1, 30)
 
 [node name="Game" type="Node3D" unique_id=845903344]
 
 [node name="player" type="CharacterBody3D" parent="." unique_id=2104608700]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_xhv1s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1165849592]
@@ -27,5 +34,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 7)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1391786966]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=710799975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=707714751]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1615371870]
+shape = SubResource("BoxShape3D_4kxuq")
+debug_color = Color(0.29591334, 0.62853366, 0.07560585, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=801621414]
+mesh = SubResource("BoxMesh_4kxuq")

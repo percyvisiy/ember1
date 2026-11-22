@@ -12,10 +12,10 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _physics_process(delta: float) -> void:
 	#get player input
 	var input_dir := Input.get_vector(
-	"ui_left",
-	"ui_right",
-	"ui_up",
-	"ui_down"
+	"move_left",
+	"move_right",
+	"move_foward",
+	"move_backward"
 	)
 	
 	var foward := -camera.global_basis.z
@@ -46,5 +46,5 @@ func _physics_process(delta: float) -> void:
 		)
 		
 	move_and_slide()
-	
+
 	
