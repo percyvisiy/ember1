@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var rotation_speed: float = 10.0
 
 @onready var visuals: Node3D = $visuals
-@onready var camera: Camera3D = $CameraPivot/Camera3D
+@onready var camera: Camera3D = $CameraPivot/SpringArm3D/Camera3D
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -18,16 +18,16 @@ func _physics_process(delta: float) -> void:
 	"move_backward"
 	)
 	
-	var foward := -camera.global_basis.z
+	var forward := -camera.global_basis.z
 	var right := camera.global_basis.x
 	
-	foward.y = 0
+	forward.y = 0
 	right.y = 0
 	
-	foward = foward.normalized()
+	forward = forward.normalized()
 	right = right.normalized()
 	
-	var direction := right * input_dir.x - foward * input_dir.y
+	var direction := right * input_dir.x - forward * input_dir.y
 	
 	direction = direction.normalized()
 	
@@ -46,5 +46,3 @@ func _physics_process(delta: float) -> void:
 		)
 		
 	move_and_slide()
-
-	
