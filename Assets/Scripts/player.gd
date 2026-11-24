@@ -9,6 +9,8 @@ extends CharacterBody3D
 
 var nearby_objects: Array[Node3D] = []
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+var wood_count: int = 0
+signal inventory_changed(wood_count: int)
 
 func _ready() -> void:
 	interaction_area.area_entered.connect(_on_area_entered)
@@ -87,3 +89,8 @@ func interact() -> void:
 		target.interact(self)
 	else:
 		nearby_objects.erase(target)
+
+func add_wood(amount: int) -> void:
+	wood_count += amount
+	inventory_changed.emit(wood_count)
+	print("wood: ", wood_count)
