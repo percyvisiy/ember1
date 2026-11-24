@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bbe3wwh72dpks"]
+
+[ext_resource type="Script" uid="uid://bej67salmtlmc" path="res://Assets/Scripts/wood.gd" id="1_7csyp"]
+[ext_resource type="PackedScene" uid="uid://duqvk6yn3bmug" path="res://Assets/Sprites/nature/tree-log-small.glb" id="2_addrg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mti6b"]
+radius = 2.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhv1s"]
+size = Vector3(0.183815, 0.23266602, 0.64372253)
+
+[node name="wood" type="StaticBody3D" unique_id=1300651947]
+script = ExtResource("1_7csyp")
+
+[node name="interactionArea" type="Area3D" parent="." unique_id=1927323288]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="interactionArea" unique_id=2037319646]
+shape = SubResource("SphereShape3D_mti6b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1100562729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012168884, 0.13366699, 0.0006790161)
+shape = SubResource("BoxShape3D_xhv1s")
+
+[node name="tree-log-small2" parent="." unique_id=1292824963 instance=ExtResource("2_addrg")]

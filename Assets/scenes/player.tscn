@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bk2xckeb5b5km"]
+
+[ext_resource type="Script" uid="uid://4ej5lhntgf1g" path="res://Assets/Scripts/player.gd" id="1_50d87"]
+[ext_resource type="PackedScene" uid="uid://bi3gnwkxcmpaj" path="res://Assets/Sprites/player/Models/GLB format/character-male-a.glb" id="2_wyb7m"]
+[ext_resource type="Script" uid="uid://nyd0gwlo7865" path="res://Assets/Scripts/camera_pivot.gd" id="3_dxd6f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kxuq"]
+radius = 0.40356445
+height = 0.8687744
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4kxuq"]
+radius = 2.5
+
+[node name="player" type="CharacterBody3D" unique_id=1571294799]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_50d87")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=171740186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36602783, 0)
+shape = SubResource("CapsuleShape3D_4kxuq")
+
+[node name="visuals" type="Node3D" parent="." unique_id=2078469575]
+
+[node name="character-male-a2" parent="visuals" unique_id=1516727179 instance=ExtResource("2_wyb7m")]
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1344520352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+script = ExtResource("3_dxd6f")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1630145069]
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=813004894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 7)
+current = true
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=217087355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=906185808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("SphereShape3D_4kxuq")

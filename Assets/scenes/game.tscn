@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://dmobqecujmki"]
 
-[ext_resource type="PackedScene" uid="uid://bi3gnwkxcmpaj" path="res://Assets/Sprites/player/Models/GLB format/character-male-a.glb" id="1_twkp1"]
-[ext_resource type="Script" uid="uid://4ej5lhntgf1g" path="res://Assets/Scripts/player.gd" id="1_xhv1s"]
-[ext_resource type="Script" uid="uid://nyd0gwlo7865" path="res://Assets/Scripts/camera_pivot.gd" id="3_ykwck"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kxuq"]
-radius = 0.40722656
-height = 1.5
+[ext_resource type="PackedScene" uid="uid://bk2xckeb5b5km" path="res://Assets/scenes/player.tscn" id="1_xhv1s"]
+[ext_resource type="PackedScene" uid="uid://bbe3wwh72dpks" path="res://Assets/scenes/wood.tscn" id="2_ykwck"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4kxuq"]
 size = Vector3(30, 1, 30)
@@ -16,28 +11,11 @@ size = Vector3(30, 1, 30)
 
 [node name="Game" type="Node3D" unique_id=845903344]
 
-[node name="player" type="CharacterBody3D" parent="." unique_id=2104608700]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-script = ExtResource("1_xhv1s")
+[node name="player" parent="." unique_id=1571294799 instance=ExtResource("1_xhv1s")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1165849592]
-shape = SubResource("CapsuleShape3D_4kxuq")
-
-[node name="visuals" type="Node3D" parent="player" unique_id=139956664]
-
-[node name="character-male-a2" parent="player/visuals" unique_id=1516727179 instance=ExtResource("1_twkp1")]
-
-[node name="CameraPivot" type="Node3D" parent="player" unique_id=1857535061]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
-script = ExtResource("3_ykwck")
-
-[node name="SpringArm3D" type="SpringArm3D" parent="player/CameraPivot" unique_id=927509493]
-spring_length = 5.0
-
-[node name="Camera3D" type="Camera3D" parent="player/CameraPivot/SpringArm3D" unique_id=1499622283]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 7)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1391786966]
+[node name="AreaLight3D" type="AreaLight3D" parent="player" unique_id=1607717608]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=710799975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -48,3 +26,5 @@ debug_color = Color(0.29591334, 0.62853366, 0.07560585, 0.41960785)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=801621414]
 mesh = SubResource("BoxMesh_4kxuq")
+
+[node name="wood" parent="." unique_id=1300651947 instance=ExtResource("2_ykwck")]
