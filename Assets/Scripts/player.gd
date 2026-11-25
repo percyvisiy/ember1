@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var visuals: Node3D = $visuals
 @onready var camera: Camera3D = $CameraPivot/SpringArm3D/Camera3D
 @onready var interaction_area: Area3D = $InteractionArea
+@onready var animation_player: AnimationPlayer = $"visuals/character-male-a2/AnimationPlayer"
 
 var nearby_objects: Array[Node3D] = []
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -53,6 +54,8 @@ func _physics_process(delta: float) -> void:
 		)
 		
 	move_and_slide()
+	
+	update_animation()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and not event.is_echo():
@@ -94,3 +97,11 @@ func add_wood(amount: int) -> void:
 	wood_count += amount
 	inventory_changed.emit(wood_count)
 	print("wood: ", wood_count)
+
+func update_animation() -> void:
+	var horizontal_speed := Vector2(velocity.x, velocity.z).length()
+	
+	if horizontal_speed > 0.1:
+		animation_player.play("walk")
+	else:
+			animation_player.play("idle")

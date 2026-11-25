@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cebvv5qrhftx0"]
+
+[ext_resource type="PackedScene" uid="uid://bi3gnwkxcmpaj" path="res://Assets/Sprites/player/Models/GLB format/character-male-a.glb" id="1_86fe7"]
+
+[node name="character-male-a2" unique_id=1516727179 instance=ExtResource("1_86fe7")]
+
+[node name="Skeleton3D" parent="character-male-a" parent_id_path=PackedInt32Array(1872501625) index="0" unique_id=2086880714]
+bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
+bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
