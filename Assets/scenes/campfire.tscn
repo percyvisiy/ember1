@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bup26yli1l2xd"]
+
+[ext_resource type="PackedScene" uid="uid://br6poswbqr8ib" path="res://Assets/Sprites/nature/campfire-pit.glb" id="1_g7bjr"]
+
+[sub_resource type="Gradient" id="Gradient_uyf88"]
+offsets = PackedFloat32Array(0, 0.5243902, 1)
+colors = PackedColorArray(1, 0.8352941, 0.2901961, 1, 1, 0.45882353, 0.09411765, 1, 0.70980394, 0.16470589, 0.08627451, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_11768"]
+gradient = SubResource("Gradient_uyf88")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mti6b"]
+direction = Vector3(0, 1, 0)
+spread = 25.0
+initial_velocity_min = 0.7
+initial_velocity_max = 1.8
+angular_velocity_min = -45.000015
+angular_velocity_max = 44.999985
+gravity = Vector3(0, 1.5, 0)
+damping_min = 0.2
+damping_max = 0.5
+scale_min = 0.25
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_11768")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62yky"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0.45882353, 0.09411765, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mm1bc"]
+material = SubResource("StandardMaterial3D_62yky")
+size = Vector2(0.35, 0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4kxuq"]
+height = 1.2089844
+radius = 0.2680664
+
+[node name="Campfire" type="Node3D" unique_id=2093755271]
+
+[node name="visuals" type="Node3D" parent="." unique_id=2033101736]
+
+[node name="campfire-pit2" parent="visuals" unique_id=861230153 instance=ExtResource("1_g7bjr")]
+transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0, 0)
+
+[node name="FireLight" type="OmniLight3D" parent="." unique_id=702871038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_color = Color(1, 0.5411765, 0.20784314, 1)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="FireParticles" type="GPUParticles3D" parent="." unique_id=1264042657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13352692, 0)
+amount = 40
+lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_mti6b")
+draw_pass_1 = SubResource("QuadMesh_mm1bc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1469176921]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1058134848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3955078, 0)
+shape = SubResource("CylinderShape3D_4kxuq")
