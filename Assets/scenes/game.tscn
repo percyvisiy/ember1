@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cru7da6innne2" path="res://Assets/scenes/tree.tscn" id="5_2baba"]
 [ext_resource type="PackedScene" uid="uid://c03jvoqpadrof" path="res://Assets/scenes/rock.tscn" id="6_egi8q"]
 [ext_resource type="PackedScene" uid="uid://bup26yli1l2xd" path="res://Assets/scenes/campfire.tscn" id="7_sdm7a"]
+[ext_resource type="PackedScene" uid="uid://dixogcxhhel0l" path="res://Assets/scenes/enemy.tscn" id="8_18fif"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4kxuq"]
 size = Vector3(300, 1, 300)
@@ -325,3 +326,6 @@ environment = SubResource("Environment_4kxuq")
 
 [node name="Campfire" parent="." unique_id=2093755271 instance=ExtResource("7_sdm7a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="Enemy" parent="." unique_id=1336836605 instance=ExtResource("8_18fif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)

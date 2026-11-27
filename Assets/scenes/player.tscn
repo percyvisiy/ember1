@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://nyd0gwlo7865" path="res://Assets/Scripts/camera_pivot.gd" id="3_dxd6f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kxuq"]
-radius = 0.40356445
-height = 0.8687744
+radius = 0.29052734
+height = 1.0221252
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4kxuq"]
 radius = 2.5
@@ -16,7 +16,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 script = ExtResource("1_50d87")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=171740186]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36602783, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44270325, 0)
 shape = SubResource("CapsuleShape3D_4kxuq")
 
 [node name="visuals" type="Node3D" parent="." unique_id=2078469575]

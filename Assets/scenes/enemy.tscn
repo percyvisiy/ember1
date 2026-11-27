@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dixogcxhhel0l"]
+
+[ext_resource type="Script" uid="uid://dvs0t57ej7u14" path="res://Assets/Scripts/enemy.gd" id="1_c5avr"]
+[ext_resource type="PackedScene" uid="uid://cabtpgh0id7iw" path="res://Assets/Sprites/player/Models/GLB format/character-alien.glb" id="2_laudv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4kxuq"]
+radius = 0.25195313
+height = 1.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mti6b"]
+radius = 10.0
+
+[node name="Enemy" type="Node3D" unique_id=1336836605]
+
+[node name="Enemy" type="CharacterBody3D" parent="." unique_id=1062405977]
+script = ExtResource("1_c5avr")
+
+[node name="Visuals" type="Node3D" parent="Enemy" unique_id=896142760]
+
+[node name="character-alien2" parent="Enemy/Visuals" unique_id=1728108052 instance=ExtResource("2_laudv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=2052543900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_4kxuq")
+
+[node name="DetectionArea" type="Area3D" parent="Enemy" unique_id=1423172009]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/DetectionArea" unique_id=1045361571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("SphereShape3D_mti6b")
